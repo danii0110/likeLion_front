@@ -53,6 +53,7 @@ export default function Login() {
         setnotAllow(true); //기본적으로는 비활성화
     }, [emailValid, pwValid]);
 
+  
     return (
         <div className='page'>
             <div className='titleWrap'>
@@ -67,10 +68,12 @@ export default function Login() {
                     className='input'
                     placeholder='test@gmail.com'
                     value={email}
+                    //handleEmail()이 아닌 handleEmail을 사용하는 이유(()생략이유) : 소괄호가 붙으면 return값이 유지가 안됨
                     onChange={handleEmail}/>
                 </div>
                 <div className='errorMessageWrap'>
                     {
+                        //if생략
                         !emailValid && email.length>0 && (
                             <div>올바른 이메일을 입력해주세요.</div>
                         )
