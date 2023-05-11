@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Oopsla from "./assets/Image/Logo.png"
 
 const User = {
     email: 'test@example.com',
@@ -12,6 +13,7 @@ export default function Login() {
     const [emailValid, setEmailValid] = useState(false);
     const [pwValid, setPwValid] = useState(false);
     const [notAllow, setnotAllow] = useState(true);
+
 
 
     const handleEmail = (e) => {
@@ -56,9 +58,10 @@ export default function Login() {
   
     return (
         <div className='page'>
-            <div className='titleWrap'>
+            <img className="oopsla-logo" src={Oopsla} alt="oops!a logo" title="천다인이 로고 만듦"/>
+            {/* <div className='titleWrap'>
                 이메일과 비밀번호를<br/>입력해주세요
-            </div>
+            </div> */}
 
             <div className='contentWrap'>
                 <div className='inputTitle'>이메일 주소</div>
@@ -68,7 +71,8 @@ export default function Login() {
                     className='input'
                     placeholder='test@gmail.com'
                     value={email}
-                    //handleEmail()이 아닌 handleEmail을 사용하는 이유(()생략이유) : 소괄호가 붙으면 return값이 유지가 안됨
+                    //따라서 onChange={handleEmail}에서 handleEmail() 대신 handleEmail을 전달하는 것은 이벤트가 발생할 때 handleEmail 함수를 호출하기 위한 것입니다. handleEmail()를 전달하면 페이지가 렌더링될 때 바로 함수가 호출되므로, 이벤트가 발생했을 때 실행되지 않습니다.
+                    //예를 들어 onClick을 할 때 () 사용하면 원할 때 안될 수 있음
                     onChange={handleEmail}/>
                 </div>
                 <div className='errorMessageWrap'>
