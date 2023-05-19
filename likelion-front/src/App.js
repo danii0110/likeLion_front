@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Link, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import React, {Component} from "react";
+import { Link, Route, Routes, BrowserRouter } from "react-router-dom";
 
 
 import Home from './Home';
@@ -12,7 +12,7 @@ import Register from "./Register";
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <header>
         <Link to="/">
           <button>Home</button>
@@ -24,11 +24,11 @@ export default function App() {
       <hr />
       <main>
         <Routes>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route component={NotFound} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route element={<NotFound/>} />
         </Routes>
       </main>
-    </Router>
+    </BrowserRouter>
   );
 };
