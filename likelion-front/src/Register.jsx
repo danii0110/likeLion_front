@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 
-const User = {
-    email: 'test@example.com',
-    pw: 'test2323@@@'
+const onApply = () => {
+    const newMember = {
+        
+
+    }
 }
 
 export default function Register() {
