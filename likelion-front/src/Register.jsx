@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
-const onApply = () => {
-    const newMember = {
+// const onApply = () => {
+//     const newMember = {
         
 
-    }
-}
+//     }
+// }
 
 export default function Register() {
     const [email, setEmail] = useState('');
